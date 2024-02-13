@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<app-map></app-map>
+
+<div id="tabletitle">
+    <span id="loc" (click)="sortTable('location')">Location</span>
+    <span id="bName" (click)="sortTable('name')">Baddie's Name</span>
+    <span id="time" (click)="sortTable('time')">Time Reported</span>
+    <span id="status">Status</span>
+</div>
+
+<app-person
+    *ngFor="let p of people"
+    [person]="p"
+    (delete)="onPersonDelete($event)"
+></app-person>
+
+<a routerLink="/person/add" id="addBtn" class="btn btn-outline-primary">CREATE NEW NUISANCE REPORT</a><br>
+</html>

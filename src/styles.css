@@ -1,0 +1,10 @@
+@import "~leaflet/dist/leaflet.css";
+
+body {
+  background: #648880;
+  background: linear-gradient(to right, #d3e3f6, #ada8b3 85%);
+}
+
+#mapid { 
+  height: 1080px; 
+}

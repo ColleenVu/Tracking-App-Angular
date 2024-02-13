@@ -1,0 +1,24 @@
+
+<!doctype html>
+<html lang="en">
+<p id="tabletitle">
+  <span id="loc" [textContent]="person.location"></span> 
+  <span id="bName" [textContent]="person.name"></span> 
+  <span id="time">{{ person.added_on | date:'MMM dd, yyyy' | uppercase }} 
+    at {{ person.added_on | date:'h:mm:ss a' | uppercase }}</span>
+  <span id="status" [textContent]="person.status"></span> 
+  <span id="butt">
+    <button 
+      id="show" 
+      class="btn btn-outline-primary"
+      (click)="onView()">
+      MORE INFO
+    </button> 
+    <button 
+      id="delete" 
+      class="btn btn-outline-danger"
+      (click)="onDelete($event, person.id)"    
+    >&#10005;</button>
+  </span>
+</p>
+

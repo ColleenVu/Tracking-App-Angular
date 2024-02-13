@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<div id="container">
+  <ng-container *ngIf="person?.image; else fallbackImage">
+    <img id="img" [src]="person.image" alt="Person Image">
+  </ng-container>
+
+  <ng-template #fallbackImage>
+    <img id="img2"
+      [src]="'https://img.freepik.com/premium-vector/anonymous-man-black-silhouette-with-question-mark-incognito-male-person-vector-illustration_261737-806.jpg?w=360'"
+      alt="Fallback Image">
+  </ng-template>
+  <p><span>Baddie's Name:</span> <span id="bName"> {{ pname }}</span></p>
+  <p><span>Location:</span>  {{ plocation }}</p>
+  <p><span>Reported By:</span>  {{ pyourname }} &#40;{{ pcontactnumber }}&#41;</p>
+  <p><span>Status:</span>  {{ pstatus }} <button id="changeBtn" (click)="changeStatus()">Change</button></p>
+  <p><span>Time:</span>  {{ padded_on | date:'yyyy-MM-dd h:mm a' }}</p>
+  <p><span>Extra Info:</span>  {{ pmoreinfo }}</p>
+  <button id="goBackBtn" (click)="goBack()">Go Back</button>
+</div>
+
+</html>

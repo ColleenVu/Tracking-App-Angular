@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nova+Square&display=swap');
+#addBtn{
+    width: 90vw;
+}
+#tabletitle {
+    border:1px solid black;
+    width: 90vw;
+    margin-top: 20px;
+    user-select: none;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+}
+#loc{
+    grid-column: 1/2;
+}
+#bName{
+    grid-column: 2/3;
+}
+#time{
+    grid-column: 3/4;
+}
+#status{
+    grid-column: 4/5;
+}
+
+#addBtn{
+    margin-top: 15px;
+}
+
+#loc, #bName, #time, #status{
+    font-weight: bolder;
+    font-family: 'Lato';
+}
+
+#addBtn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3rem;
+  padding: calc(1rem - 1px) calc(1.5rem - 1px);
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #ffffff7d;
+  box-shadow: rgba(0, 0, 0, 0.024) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.621);
+  font-family: 'Lato';
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  line-height: 1.25;
+}
+
+#addBtn:hover,
+#addBtn:focus{
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.12) 0 5px 15px;
+  color: rgba(0, 0, 0, 0.999);
+}
+
+#addBtn:active {
+  background-color: #f2f2f332;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 3px 6px;
+  color: rgba(0, 0, 0, 0.7);
+  transform: translateY(0px);
+}
+
+#loc, #bName, #time {
+  cursor: pointer;
+  transition: color 0.3s ease; 
+}
+
+#loc:hover, #bName:hover, #time:hover {
+  color: rgb(57, 67, 255); 
+}

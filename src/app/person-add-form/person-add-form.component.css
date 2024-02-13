@@ -1,0 +1,21 @@
+legend{
+  text-align: center;
+}
+
+form {
+  width: 80vw;
+  padding: 1em;
+  margin: 1em;
+}
+
+.requirements{
+  color: rgb(112, 111, 111);
+}
+
+#lat, #long{
+  margin-top: 0.5em;
+}
+
+#url{
+  margin-top: 1em;
+}

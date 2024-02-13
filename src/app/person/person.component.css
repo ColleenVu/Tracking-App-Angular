@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nova+Square&family=Rubik+Bubbles&display=swap');
+
+p {
+    border:1px solid black;
+    width: 90vw;
+    user-select: none;
+    text-align: center;
+}
+
+button{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.instructor-style{
+    border: 1px solid red;
+    box-shadow: 10px 5px 10px grey;
+}
+#tabletitle {
+    border:1px solid black;
+    border-top: none;
+    width: 90vw;
+    user-select: none;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+    margin: 0px;
+}
+#loc{
+    grid-column: 1/2;
+}
+#bName{
+    grid-column: 2/3;
+    font-family: 'Rubik Bubbles';
+}
+#time{
+    grid-column: 3/4;
+}
+#status{
+    grid-column: 4/5;
+}
+#show{
+    margin-right: 5px;
+}
+    

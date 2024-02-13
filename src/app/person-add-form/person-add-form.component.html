@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <fieldset class="d-grid gap-2 col-12">
+    <legend>CREATE NUISANCE REPORT</legend>
+    <input type="text" class="form-control" name="name" placeholder="Baddie's Name" formControlName="name">
+    <input type="text" class="form-control" name="yourname" placeholder="Enter Your Name" formControlName="yourname">
+    <input type="tel" class="form-control" name="contactnumber" placeholder="Contact Number"
+      formControlName="contactnumber" min="10" max="10">
+
+    <select class="form-control" name="location" id="loc" formControlName="location"
+      (change)="populate(form.get('location')?.value)">
+      <option value="" disabled selected>Select Location</option>
+      <option *ngFor="let loc of locations" [value]="loc.name">{{ loc.name }}</option>
+    </select>
+
+    <div class="form-check" *ngIf="form.get('location')?.value === ''">
+      <input type="checkbox" name="newLocation" id="newLocation" formControlName="newLocation" class="form-check-input">
+      <label class="form-check-label " for="newLocation">Add New Location</label>
+    </div>
+
+    <div *ngIf="form.get('newLocation')?.value">
+      <input type="text" class="form-control" name="locationName" placeholder="Location Name"
+        formControlName="locationName">
+
+      <div class="form-group">
+        <input type="number" id="lat" formControlName="latitude" placeholder="Latitude" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="long" formControlName="longitude" placeholder="Longitude" class="form-control" />
+      </div>
+    </div>
+
+    <input type="url" name="url" class="form-control" id="url" formControlName="image" placeholder="Image URL"
+      pattern="https://.*" size="30" />
+    <input type="textarea" class="form-control" name="extrainfo" placeholder="Additional Information"
+      formControlName="extrainfo">
+
+    <label>
+      Status:
+      <input type="radio" value="open" id="status" name="status" formControlName="status">
+      OPEN
+    </label>
+
+    <button class="btn btn-outline-primary" [disabled]="!form.valid">
+      CREATE
+    </button>
+  </fieldset>
+
+  <span class="requirements" *ngIf="form.controls['name'].errors as name_error"> &#10005; Baddie's Name
+    Required</span><br>
+  <span class="requirements" *ngIf="form.controls['yourname'].errors as name_error"> &#10005; Your Name
+    Required</span><br>
+  <span class="requirements" *ngIf="form.controls['contactnumber'].errors as name_error"> &#10005; Contact Information
+    Required &#40;10-15
+    digits&#41;</span><br>
+  <span class="requirements"
+    *ngIf="form.controls['locationName'].errors || form.controls['latitude'].errors || form.controls['longitude'].errors as name_error">
+    &#10005; Location Required</span><br>
+  <span class="requirements" *ngIf="form.controls['locationName'].errors as name_error"> &#10005; Location Name
+    Required</span><br>
+  <span class="requirements" *ngIf="form.controls['latitude'].errors as name_error"> &#10005; Latitude Coordinates
+    Required &#40;Between -90
+    and 90&#41;</span><br>
+  <span class="requirements" *ngIf="form.controls['longitude'].errors as name_error"> &#10005; Longitude Coordinates
+    Required &#40;Between
+    -180 and 180&#41;</span><br>
+
+</form>
+
+</html>
